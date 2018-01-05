@@ -28,6 +28,8 @@ instance_groups:
   - name: zookeeper
     release: zookeeper
     properties: {}
+  - name: java
+    release: java
   vm_type: minimal
   stemcell: default
   persistent_disk: 10240
