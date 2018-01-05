@@ -1,0 +1,6 @@
+---
+name: zookeeper
+
+files:
+- zookeeper/zookeeper-3.4.11.tar.gz
+
