@@ -1,0 +1,66 @@
+---
+name: li-zk
+
+
+packages:
+- zookeeper
+
+templates:
+  ctl.erb: bin/ctl
+  zoo.cfg.erb: config/zoo.cfg
+  pre-start.erb: bin/pre-start
+  myid.erb: config/myid
+  log4j.properties: config/log4j.properties
+  configuration.xsl: config/configuration.xsl
+
+consumes:
+- name: peers
+  type: zookeeper_peers
+
+provides:
+- name: conn
+  type: zookeeper
+  properties:
+  - client_port
+- name: peers
+  type: zookeeper_peers
+  properties:
+  - client_port
+  - quorum_port
+  - leader_election_port
+
+properties:
+  listen_address:
+     description: "The address to listen for client connection"
+     default: "0.0.0.0"
+  client_port:
+     description: "port to listen for client connections"
+     default: 2181
+  quorum_port:
+     description: "Apache Zookeeper Client quorum port"
+     default: 2888
+  leader_election_port:
+     description: "Apache Zookeeper Client leader election port"
+     default: 3888
+  autopurge_purge_interval:
+     description: "The time interval in hours for which the purge task has to be triggered"
+     default: 24
+  tick_time:
+     description: "the length of a single tick,which is the basic time unit used by ZooKeeper, as measured in milliseconds"
+     default: 2000
+  init_limit:
+     description: "Amount of time, in ticks,to allow followers to connect and sync to a leader"
+     default: 5
+  sync_limit:
+     default: 2 
+
+
+
+
+
+
+
+
+
+
+

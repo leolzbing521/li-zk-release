@@ -1,0 +1,15 @@
+<% peers = link('peers') %>
+
+<% peers.instances.each do|instance| %>
+server.<%= instance.index+1 %>=<%= instance.address %>:<%=peers.p('quorum_port') %>:<%= peers.p('leader_election_port') %>
+<% end %>
+clientPort=<%= peers.p('client_port') %>
+clientPortAddress=<%= p('listen_address') %>
+dataDir=/var/vcap/store/li-zk
+dataLogDir=/var/vcap/sys/log/li-zk
+ticketTime=<%= p('tick_time') %>
+initLimit=<%= p('init_limit') %>
+syncLimit=<%= p('sync_limit') %>
+
+
+

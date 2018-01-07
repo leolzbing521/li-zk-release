@@ -1,8 +1,8 @@
 ---
-name: zookeeper
+name: li-zk
 
 releases:
-- name: zookeeper
+- name: li-zk
   version: latest
 - name: java
   version: latest
@@ -21,12 +21,12 @@ update:
   update_watch_time: 10-20
 
 instance_groups:
-- name: zookeeper
+- name: zk_job
   azs: [z1, z2, z3]
-  instances: 1
+  instances: 3
   jobs:
-  - name: zookeeper
-    release: zookeeper
+  - name: li-zk
+    release: li-zk
     properties: {}
   - name: java
     release: java
@@ -36,4 +36,3 @@ instance_groups:
   networks:
   - name: default
  
-     

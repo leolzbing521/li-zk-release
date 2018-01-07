@@ -1,9 +1,0 @@
----
-name: zookeeper 
-
-packages:
-- zookeeper
-
-templates:
-  ctl.erb: bin/ctl
-

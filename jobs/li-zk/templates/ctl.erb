@@ -2,13 +2,13 @@
 
 set -e 
 
-export ZOOCFGDIR=/var/vcap/jobs/zookeeper/config
-export ZOO_LOG_DIR=/var/vcap/sys/log/zookeeper
+export ZOOCFGDIR=/var/vcap/jobs/li-zk/config
+export ZOO_LOG_DIR=/var/vcap/sys/log/li-zk
 export ZOO_LOG4J_PROP="INFO,CONSOLE,ROLLINGFILE"
 
-export RUN_DIR=/var/vcap/sys/run/zookeeper/
-export PIDFILE=/var/vcap/sys/run/zookeeper/pid
-export TMPDIR=/var/vcap/data/zookeeper/tmp
+export RUN_DIR=/var/vcap/sys/run/li-zk/
+export PIDFILE=/var/vcap/sys/run/li-zk/pid
+export TMPDIR=/var/vcap/data/li-zk/tmp
 
 export JAVA_HOME=/var/vcap/packages/java/jdk
 export PATH=$JAVA_HOME/bin:$PATH
@@ -18,7 +18,6 @@ for jar_dir in $(ls -d /var/vcap/packages/*/*/*.jar);do
    export CLASSPATH=${jar_dir}:$CLASSPATH
 done
 
-mkdir $ZOO_LOG_DIR -p
 case $1 in
 
     start)

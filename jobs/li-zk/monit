@@ -1,0 +1,5 @@
+check process li-zk
+  with pidfile /var/vcap/sys/run/li-zk/pid
+  start program "/var/vcap/jobs/li-zk/bin/ctl start"
+  stop program "/var/vcap/jobs/li-zk/bin/ctl stop"
+  group vcap
