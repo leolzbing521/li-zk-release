@@ -30,6 +30,8 @@ instance_groups:
     properties: {}
   - name: java
     release: java
+  - name: status
+    release: li-zk
   vm_type: minimal
   stemcell: default
   persistent_disk: 10240

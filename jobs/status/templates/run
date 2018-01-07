@@ -1,0 +1,2 @@
+#!/bin/bash
+exec /var/vcap/jobs/li-zk/bin/ctl status
