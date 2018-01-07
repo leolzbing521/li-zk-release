@@ -17,8 +17,8 @@ stemcells:
 update:
   canaries: 2
   max_in_flight: 1
-  canary_watch_time: 10-20
-  update_watch_time: 10-20
+  canary_watch_time: 5000-60000
+  update_watch_time: 5000-60000
 
 instance_groups:
 - name: zk_job
